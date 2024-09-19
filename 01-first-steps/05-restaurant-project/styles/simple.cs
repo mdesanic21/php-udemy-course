@@ -15,8 +15,6 @@
   --text-light: #585858;
   --border: #898EA4;
   --accent: #0d47a1;
-  --accent-hover: #1266e2;
-  --accent-text: var(--bg);
   --code: #d81b60;
   --preformatted: #444;
   --marked: #ffdd33;
@@ -33,8 +31,6 @@
     --text: #dcdcdc;
     --text-light: #ababab;
     --accent: #ffb300;
-    --accent-hover: #ffe099;
-    --accent-text: var(--bg);
     --code: #f06292;
     --preformatted: #ccc;
     --disabled: #111;
@@ -88,10 +84,6 @@ body > header {
   text-align: center;
   padding: 0 0.5rem 2rem 0.5rem;
   grid-column: 1 / -1;
-}
-
-body > header > *:only-child {
-  margin-block-start: 2rem;
 }
 
 body > header h1 {
@@ -199,7 +191,7 @@ input[type="button"],
 label[type="button"] {
   border: 1px solid var(--accent);
   background-color: var(--accent);
-  color: var(--accent-text);
+  color: var(--bg);
   padding: 0.5rem 0.9rem;
   text-decoration: none;
   line-height: normal;
@@ -233,8 +225,7 @@ input[type="submit"]:enabled:hover,
 input[type="reset"]:enabled:hover,
 input[type="button"]:enabled:hover,
 label[type="button"]:hover {
-  background-color: var(--accent-hover);
-  border-color: var(--accent-hover);
+  filter: brightness(1.4);
   cursor: pointer;
 }
 
@@ -289,8 +280,7 @@ header > nav a:visited {
 
 header > nav a:hover,
 header > nav a.current,
-header > nav a[aria-current="page"],
-header > nav a[aria-current="true"] {
+header > nav a[aria-current="page"] {
   border-color: var(--accent);
   color: var(--accent);
   cursor: pointer;
@@ -342,9 +332,7 @@ article, fieldset, dialog {
 }
 
 article h2:first-child,
-section h2:first-child,
-article h3:first-child,
-section h3:first-child {
+section h2:first-child {
   margin-top: 1rem;
 }
 
@@ -360,10 +348,6 @@ section + section,
 section:first-child {
   border-top: 0;
   padding-top: 0;
-}
-
-section + section {
-  margin-top: 0;
 }
 
 section:last-child {
@@ -399,11 +383,6 @@ details[open] > :last-child {
 table {
   border-collapse: collapse;
   margin: 1.5rem 0;
-}
-
-figure > table {
-  width: max-content;
-  margin: 0;
 }
 
 td,
@@ -572,17 +551,11 @@ figure {
   overflow-x: auto;
 }
 
-figure > img,
-figure > picture > img {
-  display: block;
-  margin-inline: auto;
-}
-
 figcaption {
   text-align: center;
   font-size: 0.9rem;
   color: var(--text-light);
-  margin-block: 1rem;
+  margin-bottom: 1rem;
 }
 
 blockquote {
@@ -706,7 +679,7 @@ sub {
 .notice {
   background: var(--accent-bg);
   border: 2px solid var(--border);
-  border-radius: var(--standard-border-radius);
+  border-radius: 5px;
   padding: 1.5rem;
   margin: 2rem 0;
 }

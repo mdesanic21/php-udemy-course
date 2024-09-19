@@ -1,8 +1,7 @@
+</main>
 
-    </main>
-
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> Culinary Cove. All rights reserved.</p>
-    </footer>
+<footer>
+  <p>Culinary Cove's website.</p>
+</footer>
 </body>
 </html>
